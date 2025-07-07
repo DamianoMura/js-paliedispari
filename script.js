@@ -61,12 +61,12 @@ while (isEvenOrOdd==null || playerNumber==null){
   if(isEvenOrOdd==null){
     isEvenOrOdd = validate(prompt("pari o dispari?"));
   }
-else if(playerNumber==null){
+  else if(playerNumber==null){
   playerNumber = validate(parseInt(prompt("inserisci un numero da 1 a 5")));
 }
-
 }
-console.log(`${playerNumber} & ${isEvenOrOdd}`)
+//console.log(`${playerNumber} & ${isEvenOrOdd}`) // debug
+
 //acquisisco le info dell'utente ossia il numero e la predizione se la somma è pari o dispari
 
 
@@ -82,4 +82,8 @@ else {
 return null;
 }
 
+}
+function computerRolls(){
+  const comEvenOrOdd=Math.round(random());//genera un numero tra 0=pari e 1=dispari 
+  const comNumber=Math.round(random()*5)+1;
 }
