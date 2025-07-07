@@ -1,16 +1,3 @@
-// Palidroma
-
-// Chiedere all’utente di inserire una parola
-// Creare una funzione per capire se la parola inserita è palindroma
-
-// Pari e Dispari
-
-// L’utente sceglie pari o dispari e inserisce un numero da 1 a 5.
-// Generiamo un numero random (sempre da 1 a 5) per il computer (usando una funzione).
-// Sommiamo i due numeri
-// Stabiliamo se la somma dei due numeri è pari o dispari (usando una funzione)
-// Dichiariamo chi ha vinto.
-
 // Consigli del giorno
 
 // Scriviamo sempre in italiano i passaggi che vogliamo fare
@@ -23,7 +10,13 @@
 // Se sì, di che tipo?
 
 
-//Palindroma 
+// Palidroma
+
+// Chiedere all’utente di inserire una parola
+// Creare una funzione per capire se la parola inserita è palindroma
+
+
+ 
 
 const word=prompt("inserisci una parola e vediamo se è palindroma")
 
@@ -50,4 +43,31 @@ if(palindrome(word)==true){
 }
 else{
   console.log("non palindroma")
+}
+
+// Pari e Dispari
+
+// L’utente sceglie pari o dispari e inserisce un numero da 1 a 5.
+// Generiamo un numero random (sempre da 1 a 5) per il computer (usando una funzione).
+// Sommiamo i due numeri
+// Stabiliamo se la somma dei due numeri è pari o dispari (usando una funzione)
+// Dichiariamo chi ha vinto.
+
+
+//acquisisco le info dell'utente ossia il numero e la predizione se la somma è pari o dispari
+const isEvenOrOdd = validate(prompt("pari o dispari?"));
+const playerNumber = validate(parseInt(prompt("inserisci un numero da 1 a 5")));
+
+//funzione per validare gli input
+
+function validate(request){
+  if((request==="pari"||request==="dispari")||(request>0 && request<6)){
+    console.log("input accettati")
+return request;
+}
+else {
+  console.log("input non accettati")
+return null;
+}
+
 }
