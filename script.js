@@ -84,6 +84,6 @@ return null;
 
 }
 function computerRolls(){
-  const comEvenOrOdd=Math.round(random());//genera un numero tra 0=pari e 1=dispari 
   const comNumber=Math.round(random()*5)+1;
+  return conNumber;
 }
