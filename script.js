@@ -52,8 +52,6 @@ else{
 // Sommiamo i due numeri
 // Stabiliamo se la somma dei due numeri è pari o dispari (usando una funzione)
 // Dichiariamo chi ha vinto.
-let isEvenOrOdd=validate(prompt("pari o dispari?"));
-let playerNumber=validate(parseInt(prompt("inserisci un numero da 1 a 5")));;
 
 //funzione per validare gli input
 
@@ -67,12 +65,25 @@ else {
   console.log("input non accettati")
 return null;
 }
-
 }
 
+//con la funzione computer rolls creiamo un numero random tra 1 e 5 e lo restituiamo all'invocazione
+function computerRolls(){
+  const comNumber=Math.round(random()*5)+1;
+  return comNumber;
+}
 //ripetizione in caso di input non accettati. 
 //il ciclo si ripete finchè tutti gli input siano inseriti correttamente
 //
+//acquisisco le info dell'utente ossia il numero e la predizione se la somma è pari o dispari
+function play(){
+
+}
+//scripts.js main script
+
+let isEvenOrOdd=validate(prompt("pari o dispari?"));
+let playerNumber=validate(parseInt(prompt("inserisci un numero da 1 a 5")));;
+
 while (isEvenOrOdd==null || playerNumber==null){
   alert("inserisci le informazioni corrette")
   if(isEvenOrOdd==null){
@@ -84,14 +95,5 @@ while (isEvenOrOdd==null || playerNumber==null){
 }
 //console.log(`${playerNumber} & ${isEvenOrOdd}`) // debug
 
-//acquisisco le info dell'utente ossia il numero e la predizione se la somma è pari o dispari
-function play(){
 
-}
-
-//con la funzione computer rolls creiamo un numero random tra 1 e 5
-function computerRolls(){
-  const comNumber=Math.round(random()*5)+1;
-  return comNumber;
-}
 
