@@ -52,11 +52,23 @@ else{
 // Sommiamo i due numeri
 // Stabiliamo se la somma dei due numeri è pari o dispari (usando una funzione)
 // Dichiariamo chi ha vinto.
+let isEvenOrOdd=validate(prompt("pari o dispari?"));
+let playerNumber=validate(parseInt(prompt("inserisci un numero da 1 a 5")));;
 
+//ripetizione in caso di input non accettati
+while (isEvenOrOdd==null || playerNumber==null){
+  alert("inserisci le informazioni corrette")
+  if(isEvenOrOdd==null){
+    isEvenOrOdd = validate(prompt("pari o dispari?"));
+  }
+else if(playerNumber==null){
+  playerNumber = validate(parseInt(prompt("inserisci un numero da 1 a 5")));
+}
 
+}
+console.log(`${playerNumber} & ${isEvenOrOdd}`)
 //acquisisco le info dell'utente ossia il numero e la predizione se la somma è pari o dispari
-const isEvenOrOdd = validate(prompt("pari o dispari?"));
-const playerNumber = validate(parseInt(prompt("inserisci un numero da 1 a 5")));
+
 
 //funzione per validare gli input
 
