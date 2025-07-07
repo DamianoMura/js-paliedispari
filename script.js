@@ -55,7 +55,24 @@ else{
 let isEvenOrOdd=validate(prompt("pari o dispari?"));
 let playerNumber=validate(parseInt(prompt("inserisci un numero da 1 a 5")));;
 
-//ripetizione in caso di input non accettati
+//funzione per validare gli input
+
+function validate(request){
+  //nel caso siano gli input desiderati, la funzione validate ritorna il medesimo valore di ingresso altrimenti dà null
+  if((request==="pari"||request==="dispari")||(request>0 && request<6)){
+    console.log("input accettati")
+return request;
+}
+else {
+  console.log("input non accettati")
+return null;
+}
+
+}
+
+//ripetizione in caso di input non accettati. 
+//il ciclo si ripete finchè tutti gli input siano inseriti correttamente
+//
 while (isEvenOrOdd==null || playerNumber==null){
   alert("inserisci le informazioni corrette")
   if(isEvenOrOdd==null){
@@ -68,22 +85,13 @@ while (isEvenOrOdd==null || playerNumber==null){
 //console.log(`${playerNumber} & ${isEvenOrOdd}`) // debug
 
 //acquisisco le info dell'utente ossia il numero e la predizione se la somma è pari o dispari
-
-
-//funzione per validare gli input
-
-function validate(request){
-  if((request==="pari"||request==="dispari")||(request>0 && request<6)){
-    console.log("input accettati")
-return request;
-}
-else {
-  console.log("input non accettati")
-return null;
-}
+function play(){
 
 }
+
+//con la funzione computer rolls creiamo un numero random tra 1 e 5
 function computerRolls(){
   const comNumber=Math.round(random()*5)+1;
-  return conNumber;
+  return comNumber;
 }
+
