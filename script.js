@@ -76,7 +76,7 @@ function computerRolls(){
 function play(playerNumber,comNumber,isEvenOrOdd){
   let checkNumber=playerNumber+comNumber;
   let even=false;
-  //verifico che la somma sia
+  //verifico che la somma sia pari o dispari
   if((playerNumber+comNumber)%2==0){
     console.log(`${playerNumber} +${comNumber} = ${checkNumber} è pari`);
     even=true;
@@ -85,7 +85,7 @@ function play(playerNumber,comNumber,isEvenOrOdd){
     console.log(`${playerNumber} +${comNumber} = ${checkNumber} è dispari`);
     even=false
   }
-
+  //in base a even , comparo cosa ho inserito per vedere se ho azzeccato 
   if ((even==true && isEvenOrOdd=="pari") ||  (even==false && isEvenOrOdd=="dispari")){
     console.log(`hai vinto`);
   }
