@@ -18,7 +18,7 @@
 
  
 
-const word=prompt("inserisci una parola e vediamo se è palindroma")
+const word=prompt("inserisci una parola e vediamo se è palindroma").toLowerCase
 
 //inizializziamo la funzione e diamo word come parametro
 
