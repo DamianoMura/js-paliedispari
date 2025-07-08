@@ -58,11 +58,11 @@ else{
 function validate(request){
   //nel caso siano gli input desiderati, la funzione validate ritorna il medesimo valore di ingresso altrimenti dà null
   if((request==="pari"||request==="dispari")||(request>0 && request<6)){
-    console.log("input accettati")
+    // console.log("input accettati")   //debug
 return request;
 }
 else {
-  console.log("input non accettati")
+  // console.log("input non accettati") // debug
 return null;
 }
 }
@@ -85,7 +85,8 @@ function play(playerNumber,comNumber,isEvenOrOdd){
     console.log(`${playerNumber} +${comNumber} = ${checkNumber} è dispari`);
     even=false
   }
-  if (even==true && isEvenOrOdd=="pari" && even==false && isEvenOrOdd=="dispari"){
+
+  if ((even==true && isEvenOrOdd=="pari") ||  (even==false && isEvenOrOdd=="dispari")){
     console.log(`hai vinto`);
   }
   else{
@@ -113,6 +114,6 @@ while (isEvenOrOdd==null || playerNumber==null){
 }
 }
 //console.log(`${playerNumber} & ${isEvenOrOdd}`) // debug
-play(playerNumber,comNumber);
+play(playerNumber,comNumber,isEvenOrOdd);
 
 
