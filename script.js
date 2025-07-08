@@ -69,20 +69,39 @@ return null;
 
 //con la funzione computer rolls creiamo un numero random tra 1 e 5 e lo restituiamo all'invocazione
 function computerRolls(){
-  const comNumber=Math.round(random()*5)+1;
+  let comNumber=Math.round(Math.random()*5)+1;
   return comNumber;
 }
-//ripetizione in caso di input non accettati. 
-//il ciclo si ripete finchè tutti gli input siano inseriti correttamente
-//
 //acquisisco le info dell'utente ossia il numero e la predizione se la somma è pari o dispari
-function play(){
+function play(playerNumber,comNumber,isEvenOrOdd){
+  let checkNumber=playerNumber+comNumber;
+  let even=false;
+  //verifico che la somma sia
+  if((playerNumber+comNumber)%2==0){
+    console.log(`${playerNumber} +${comNumber} = ${checkNumber} è pari`);
+    even=true;
+  }
+  else  if((playerNumber+comNumber)%2!=0){
+    console.log(`${playerNumber} +${comNumber} = ${checkNumber} è dispari`);
+    even=false
+  }
+  if (even==true && isEvenOrOdd=="pari" && even==false && isEvenOrOdd=="dispari"){
+    console.log(`hai vinto`);
+  }
+  else{
+    console.log(`hai perso`);
+  }
 
 }
 //scripts.js main script
 
 let isEvenOrOdd=validate(prompt("pari o dispari?"));
 let playerNumber=validate(parseInt(prompt("inserisci un numero da 1 a 5")));;
+let comNumber=computerRolls();
+
+//ripetizione in caso di input non accettati. 
+//il ciclo si ripete finchè tutti gli input siano inseriti correttamente
+//
 
 while (isEvenOrOdd==null || playerNumber==null){
   alert("inserisci le informazioni corrette")
@@ -94,6 +113,6 @@ while (isEvenOrOdd==null || playerNumber==null){
 }
 }
 //console.log(`${playerNumber} & ${isEvenOrOdd}`) // debug
-
+play(playerNumber,comNumber);
 
 
